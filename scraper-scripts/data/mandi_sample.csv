@@ -1,0 +1,16 @@
+commodity,district,date,min_price,max_price,modal_price
+Paddy (Common),Ahmedabad,2025-01-15,1800,1950,1880
+Paddy (Common),Kheda,2025-01-15,1820,1980,1900
+Wheat,Karnal,2025-01-15,2100,2240,2180
+Cotton (Kapas),Vadodara,2025-01-14,6500,7200,6800
+Cotton (Kapas),Anand,2025-01-14,6600,7100,6850
+Tomato,Ahmedabad,2025-01-16,850,1250,1050
+Onion,Ahmedabad,2025-01-16,1120,1450,1280
+Paddy (Common),Ahmedabad,2025-01-16,1810,1960,1890
+Wheat,Ahmedabad,2025-01-15,2050,2200,2120
+Gram (Chana),Sagar,2025-01-12,4500,4850,4675
+Potato,Agra,2025-01-11,900,1120,1030
+Banana,Nashik,2025-01-10,1350,1610,1510
+Urad,Indore,2025-01-14,5500,6200,5800
+Moong,Rajkot,2025-01-13,7200,7800,7500
+Groundnut,Junagadh,2025-01-12,5200,5600,5400

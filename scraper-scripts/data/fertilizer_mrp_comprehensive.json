@@ -1,0 +1,290 @@
+[
+  {
+    "product_name": "Urea (45% N)",
+    "category": "Nitrogenous",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 266.5,
+    "nutrient_npk": "46-0-0",
+    "source": "Government of India MRP Notification",
+    "unit": "45 kg"
+  },
+  {
+    "product_name": "Ammonium Sulphate (20% N, 24% S)",
+    "category": "Nitrogenous",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 425.0,
+    "nutrient_npk": "20-0-0",
+    "source": "FAI Market Rate",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "Calcium Ammonium Nitrate (CAN) (25% N)",
+    "category": "Nitrogenous",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 580.0,
+    "nutrient_npk": "25-0-0",
+    "source": "Market Rate",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "Single Super Phosphate (SSP) (16% P2O5)",
+    "category": "Phosphatic",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 520.0,
+    "nutrient_npk": "0-16-0",
+    "source": "Government MRP",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "Di-Ammonium Phosphate (DAP) (18-46-0)",
+    "category": "Phosphatic",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 1350.0,
+    "nutrient_npk": "18-46-0",
+    "source": "Government MRP",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "Triple Super Phosphate (TSP) (46% P2O5)",
+    "category": "Phosphatic",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 1450.0,
+    "nutrient_npk": "0-46-0",
+    "source": "Market Rate",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "Muriate of Potash (MOP) (60% K2O)",
+    "category": "Potassic",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 1125.0,
+    "nutrient_npk": "0-0-60",
+    "source": "Government MRP",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "Sulphate of Potash (SOP) (50% K2O)",
+    "category": "Potassic",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 1850.0,
+    "nutrient_npk": "0-0-50",
+    "source": "Market Rate",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "NPK 10-26-26",
+    "category": "Complex",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 1425.0,
+    "nutrient_npk": "10-26-26",
+    "source": "Government MRP",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "NPK 12-32-16",
+    "category": "Complex",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 1480.0,
+    "nutrient_npk": "12-32-16",
+    "source": "Government MRP",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "NPK 14-35-14",
+    "category": "Complex",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 1520.0,
+    "nutrient_npk": "14-35-14",
+    "source": "Government MRP",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "NPK 15-15-15",
+    "category": "Complex",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 1350.0,
+    "nutrient_npk": "15-15-15",
+    "source": "Market Rate",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "NPK 16-16-16",
+    "category": "Complex",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 1400.0,
+    "nutrient_npk": "16-16-16",
+    "source": "Market Rate",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "NPK 17-17-17",
+    "category": "Complex",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 1450.0,
+    "nutrient_npk": "17-17-17",
+    "source": "Market Rate",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "NPK 19-19-19",
+    "category": "Complex",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 1550.0,
+    "nutrient_npk": "19-19-19",
+    "source": "Market Rate",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "NPK 20-20-0-13",
+    "category": "Complex",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 1200.0,
+    "nutrient_npk": "20-20-0",
+    "source": "Government MRP",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "NPK 20-20-20",
+    "category": "Complex",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 1600.0,
+    "nutrient_npk": "20-20-20",
+    "source": "Market Rate",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "NPK 24-24-0",
+    "category": "Complex",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 1350.0,
+    "nutrient_npk": "24-24-0",
+    "source": "Government MRP",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "NPK 28-28-0",
+    "category": "Complex",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 1550.0,
+    "nutrient_npk": "28-28-0",
+    "source": "Market Rate",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "Boron (20% B)",
+    "category": "Micronutrient",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 350.0,
+    "nutrient_npk": "0-0-0",
+    "source": "Market Rate",
+    "unit": "25 kg"
+  },
+  {
+    "product_name": "Zinc Sulphate (21% Zn)",
+    "category": "Micronutrient",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 425.0,
+    "nutrient_npk": "0-0-0",
+    "source": "Market Rate",
+    "unit": "25 kg"
+  },
+  {
+    "product_name": "Ferrous Sulphate (19% Fe)",
+    "category": "Micronutrient",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 280.0,
+    "nutrient_npk": "0-0-0",
+    "source": "Market Rate",
+    "unit": "25 kg"
+  },
+  {
+    "product_name": "Gypsum (16% Sulphur, 23% Calcium)",
+    "category": "Soil Amendment",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 180.0,
+    "nutrient_npk": "0-0-0",
+    "source": "Market Rate",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "Neem Coated Urea (45% N)",
+    "category": "Nitrogenous",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 270.0,
+    "nutrient_npk": "46-0-0",
+    "source": "Government MRP",
+    "unit": "45 kg"
+  },
+  {
+    "product_name": "Vermicompost (NPK 0.8-0.8-0.8)",
+    "category": "Organic",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 350.0,
+    "nutrient_npk": "0.8-0.8-0.8",
+    "source": "Market Rate",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "Farm Yard Manure (FYM)",
+    "category": "Organic",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 150.0,
+    "nutrient_npk": "0.5-0.2-0.5",
+    "source": "Market Rate",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "Poultry Manure",
+    "category": "Organic",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 280.0,
+    "nutrient_npk": "3-2.5-1.5",
+    "source": "Market Rate",
+    "unit": "50 kg"
+  },
+  {
+    "product_name": "Liquid NPK 19-19-19",
+    "category": "Liquid",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 850.0,
+    "nutrient_npk": "19-19-19",
+    "source": "Market Rate",
+    "unit": "5 liters"
+  },
+  {
+    "product_name": "Liquid Seaweed Extract",
+    "category": "Organic Liquid",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 650.0,
+    "nutrient_npk": "0-0-0",
+    "source": "Market Rate",
+    "unit": "5 liters"
+  },
+  {
+    "product_name": "Sulphur Coated Urea (SCU)",
+    "category": "Slow Release",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 325.0,
+    "nutrient_npk": "40-0-0",
+    "source": "Market Rate",
+    "unit": "45 kg"
+  },
+  {
+    "product_name": "WSF NPK 13-40-13",
+    "category": "Water Soluble",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 1250.0,
+    "nutrient_npk": "13-40-13",
+    "source": "Market Rate",
+    "unit": "25 kg"
+  },
+  {
+    "product_name": "WSF NPK 19-19-19",
+    "category": "Water Soluble",
+    "last_updated": "2026-02-07T04:34:56.662000",
+    "mrp": 1100.0,
+    "nutrient_npk": "19-19-19",
+    "source": "Market Rate",
+    "unit": "25 kg"
+  }
+]
