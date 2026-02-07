@@ -1,0 +1,14 @@
+# Scripts: data ingestion and seed (run from project root)
+pymongo>=4.0
+python-dotenv>=1.0
+requests>=2.28
+# data.gov.in API (set DATAGOVINDIA_API_KEY)
+datagovindia>=0.2
+
+# PDF parsing for PPQS pesticide scraper
+pdfplumber>=0.10.0  # Recommended for table extraction
+PyPDF2>=3.0.0       # Fallback PDF parser
+
+# Web scraping for Agmarknet (optional - only if API fails)
+selenium>=4.0.0
+webdriver-manager>=4.0.0
