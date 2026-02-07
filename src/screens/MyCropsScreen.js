@@ -32,6 +32,7 @@ import {
 import {CropIcon} from '../components/CropIcons';
 import AddCropsScreen from './AddCropsScreen';
 import CropProductsScreen from './CropProductsScreen';
+import AskAgriExpertScreen from './AskAgriExpertScreen';
 import { request, check, PERMISSIONS, RESULTS } from 'react-native-permissions';
 import Voice from '@react-native-voice/voice';
 import { CHAT_API_BASE } from '../config';
@@ -100,6 +101,7 @@ const MyCropsScreen = ({ onBack, initialCrop }) => {
   const [crops, setCrops] = useState([]);
   const [selectedCrop, setSelectedCrop] = useState(initialCrop || null);
   const [showAddCrops, setShowAddCrops] = useState(false);
+  const [showAskAgriExpert, setShowAskAgriExpert] = useState(false);
   const [location, setLocation] = useState(null);
   const [showLocationBanner, setShowLocationBanner] = useState(false);
   const [locationLoading, setLocationLoading] = useState(false);
@@ -295,6 +297,12 @@ const MyCropsScreen = ({ onBack, initialCrop }) => {
     );
   }
 
+  if (showAskAgriExpert) {
+    return (
+      <AskAgriExpertScreen onBack={() => setShowAskAgriExpert(false)} />
+    );
+  }
+
   const displayCrop = selectedCrop || crops[0];
   if (cropProductsUiCategory && displayCrop) {
     return (
@@ -404,7 +412,9 @@ const MyCropsScreen = ({ onBack, initialCrop }) => {
                     ? () => setCropProductsUiCategory(UI_CATEGORY_FERTILIZERS)
                     : action.id === 'insecticide'
                       ? () => setCropProductsUiCategory(UI_CATEGORY_INSECTICIDE)
-                      : null;
+                      : action.id === 'expert'
+                        ? () => setShowAskAgriExpert(true)
+                        : null;
               return (
                 <TouchableOpacity
                   key={action.id}

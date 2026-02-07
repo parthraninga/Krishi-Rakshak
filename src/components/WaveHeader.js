@@ -1,18 +1,13 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {
   View,
   Image,
   StyleSheet,
   Dimensions,
+  Animated,
+  Easing,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withRepeat,
-  withTiming,
-  Easing,
-} from 'react-native-reanimated';
 
 const {width: SCREEN_WIDTH} = Dimensions.get('window');
 
@@ -31,7 +26,7 @@ const defaultColors = ['#2D7D3E', '#1B5E20'];
 /**
  * WaveHeader – IFFCO "Story of IFFCO" style hero section.
  * Layers (back → front): gradient, back wave (tiled, animated), farmer SVGs, front wave (tiled, animated), content, bottom curve.
- * Requires: react-native-reanimated, react-native-linear-gradient.
+ * Requires: react-native-linear-gradient.
  * Assets in assets/wave/: top-wave1.png, top-wave2.png, topcouple-left.svg, topfarmer-center.svg, topcouple-right.svg.
  */
 function WaveHeader({
@@ -40,35 +35,35 @@ function WaveHeader({
   children,
   showFarmers = true,
 }) {
-  const backTranslateX = useSharedValue(0);
-  const frontTranslateX = useSharedValue(0);
+  const backTranslateX = useRef(new Animated.Value(0)).current;
+  const frontTranslateX = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    backTranslateX.value = withRepeat(
-      withTiming(-SCREEN_WIDTH, {
+    const runBack = () => {
+      backTranslateX.setValue(0);
+      Animated.timing(backTranslateX, {
+        toValue: -SCREEN_WIDTH,
         duration: BACK_WAVE_DURATION,
         easing: WAVE_EASING,
-      }),
-      -1,
-      false,
-    );
-    frontTranslateX.value = withRepeat(
-      withTiming(-SCREEN_WIDTH, {
+        useNativeDriver: true,
+      }).start(({finished}) => {
+        if (finished) runBack();
+      });
+    };
+    const runFront = () => {
+      frontTranslateX.setValue(0);
+      Animated.timing(frontTranslateX, {
+        toValue: -SCREEN_WIDTH,
         duration: FRONT_WAVE_DURATION,
         easing: WAVE_EASING,
-      }),
-      -1,
-      false,
-    );
+        useNativeDriver: true,
+      }).start(({finished}) => {
+        if (finished) runFront();
+      });
+    };
+    runBack();
+    runFront();
   }, [backTranslateX, frontTranslateX]);
-
-  const backWaveAnimatedStyle = useAnimatedStyle(() => ({
-    transform: [{translateX: backTranslateX.value}],
-  }));
-
-  const frontWaveAnimatedStyle = useAnimatedStyle(() => ({
-    transform: [{translateX: frontTranslateX.value}],
-  }));
 
   return (
     <View style={[styles.container, {height}]}>
@@ -82,7 +77,11 @@ function WaveHeader({
 
       {/* 2. Back wave – tiled 4×, animated left, 60% opacity */}
       <View style={styles.waveRow} pointerEvents="none">
-        <Animated.View style={[styles.waveTiles, backWaveAnimatedStyle]}>
+        <Animated.View
+          style={[
+            styles.waveTiles,
+            {transform: [{translateX: backTranslateX}]},
+          ]}>
           {[0, 1, 2, 3].map((i) => (
             <Image
               key={`back-${i}`}
@@ -117,7 +116,11 @@ function WaveHeader({
 
       {/* 4. Front wave – tiled 4×, animated left (faster), 85% opacity */}
       <View style={styles.waveRow} pointerEvents="none">
-        <Animated.View style={[styles.waveTiles, frontWaveAnimatedStyle]}>
+        <Animated.View
+          style={[
+            styles.waveTiles,
+            {transform: [{translateX: frontTranslateX}]},
+          ]}>
           {[0, 1, 2, 3].map((i) => (
             <Image
               key={`front-${i}`}

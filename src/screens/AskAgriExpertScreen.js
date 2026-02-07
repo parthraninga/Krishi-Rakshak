@@ -12,7 +12,7 @@ import {
   Platform,
 } from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {PeopleIcon, TreeIcon} from '../components/Icons';
+import {ChevronLeftIcon, PeopleIcon, TreeIcon} from '../components/Icons';
 
 const TOPICS = [
   { id: 'pest', label: 'Pest & Disease' },
@@ -22,7 +22,7 @@ const TOPICS = [
   { id: 'other', label: 'Other' },
 ];
 
-const AskAgriExpertScreen = () => {
+const AskAgriExpertScreen = ({onBack}) => {
   const insets = useSafeAreaInsets();
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -43,6 +43,11 @@ const AskAgriExpertScreen = () => {
     return (
       <SafeAreaView style={styles.container}>
         <StatusBar backgroundColor="#2D7D3E" barStyle="light-content" />
+        {onBack && (
+          <TouchableOpacity style={[styles.backBtn, {paddingTop: Math.max(12, insets.top) + 8}]} onPress={onBack}>
+            <ChevronLeftIcon size={28} color="#FFFFFF" />
+          </TouchableOpacity>
+        )}
         <View style={styles.successWrap}>
           <View style={styles.successIconWrap}>
             <TreeIcon size={64} color="#2D7D3E" />
@@ -63,8 +68,13 @@ const AskAgriExpertScreen = () => {
         style={styles.keyboardView}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         keyboardVerticalOffset={0}>
+        {onBack && (
+          <TouchableOpacity style={[styles.backBtn, {paddingTop: Math.max(12, insets.top) + 8}]} onPress={onBack}>
+            <ChevronLeftIcon size={28} color="#FFFFFF" />
+          </TouchableOpacity>
+        )}
         {/* Hero header */}
-        <View style={[styles.hero, {paddingTop: Math.max(12, insets.top) + 12}]}>
+        <View style={[styles.hero, {paddingTop: 12}]}>
           <View style={styles.heroIconWrap}>
             <PeopleIcon size={40} color="#FFFFFF" />
           </View>
@@ -321,6 +331,12 @@ const styles = StyleSheet.create({
     color: '#666',
     textAlign: 'center',
     lineHeight: 22,
+  },
+  backBtn: {
+    position: 'absolute',
+    left: 8,
+    zIndex: 20,
+    padding: 8,
   },
 });
 

@@ -43,7 +43,7 @@ import ScanScreen from './ScanScreen';
 import AnalysisScreen from './AnalysisScreen';
 import AddCropsScreen from './AddCropsScreen';
 import MyCropsScreen from './MyCropsScreen';
-import AskAgriExpertScreen from './AskAgriExpertScreen';
+import CropRecommendationScreen from './CropRecommendationScreen';
 import KnowledgeDetailScreen from './KnowledgeDetailScreen';
 import {CropIcon} from '../components/CropIcons';
 import {GEOCODE_API_BASE} from '../config';
@@ -266,7 +266,7 @@ const HomeScreen = ({language}) => {
   if (activeTab === 'cropAdvice') {
     return (
       <SafeAreaView style={styles.container}>
-        <AskAgriExpertScreen />
+        <CropRecommendationScreen />
         <View style={styles.bottomNav}>
           <TouchableOpacity style={styles.navItem} onPress={() => setActiveTab('home')}>
             <TreeIcon size={28} color="#666" />

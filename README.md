@@ -9,6 +9,7 @@ KrishiRakshak is an agricultural support app for farmers. It helps with crop sel
 ## Table of contents
 
 - [Features](#features)
+- [Screenshots](#screenshots)
 - [Tech stack](#tech-stack)
 - [Prerequisites](#prerequisites)
 - [Project structure](#project-structure)
@@ -81,6 +82,19 @@ KrishiRakshak is an agricultural support app for farmers. It helps with crop sel
 - **Insecticides / Pesticides (Crop Protection):** Only `Insecticide`, `Herbicide`, `Fungicide`, `Bio-stimulants`.
 
 Mapping is centralized in `src/data/categoryMapping.js` and mirrored in `server/categoryMapping.js` and `lambda/categoryMapping.js`.
+
+---
+
+## Screenshots
+
+| | |
+|---|---|
+| **Home (Agro Data)** — Location, search, My Crops carousel, Scan to analyze, and Quick Access. | **Crop Recommendation** — Set soil & climate parameters (pH, rainfall, temperature, humidity) and get crop recommendations from the soil-predict API. |
+| ![Home screen](1.png) | ![Crop Recommendation](2.png) |
+| **Analysis result** — Scan a product (seeds, fertilizers, pesticides) and see validity, confidence, expiration date, and visual indicators. | **My Crops** — Manage your crops, open Solve Crop Problem (Pests & Diseases, Seeds, Fertilizers, Insecticide details, Ask agri expert), and Ask AI about your crops. |
+| ![Analysis](3.png) | ![My Crops](4.png) |
+| **My Crops (Ask AI)** — Crop overview, duration, yield, irrigation, and AI chat for soil, fertilizer, irrigation, or herbicide. | **Product detail** — Full product info, pack size selection, dosage (crop-wise), and target crops. |
+| ![My Crops – Ask AI](5.png) | ![Product detail](6.png) |
 
 ---
 
@@ -534,6 +548,7 @@ flowchart TD
 
 ## Related documentation
 
+- [docs/ANCHOR_SCRIPT.md](docs/ANCHOR_SCRIPT.md) – Anchor script for demos and presentations.
 - [APP_SCREENS.md](APP_SCREENS.md) – Screen-by-screen flow and UI notes.
 - [src/MONGODB_STRUCTURE.md](src/MONGODB_STRUCTURE.md) – MongoDB collections, schemas, indexes.
 - [lambda/README.md](lambda/README.md) – SAM deploy and Lambda product API endpoints.
