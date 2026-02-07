@@ -4,6 +4,7 @@
   "description": "Lambda products API for KrishiRakshak",
   "main": "app.js",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "mongodb": "^6.12.0"
   }
 }

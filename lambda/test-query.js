@@ -1,6 +1,11 @@
+require('dotenv').config();
 const { MongoClient } = require('mongodb');
 
-const uri = "mongodb+srv://Admin:Dp74wyxZ3vFcgHAf@cluster0.gtlis6r.mongodb.net/krishi-rakshak?retryWrites=true&w=majority&appName=Cluster0";
+const uri = process.env.MONGODB_URI || process.env.MongoUri;
+if (!uri || !uri.startsWith('mongodb')) {
+  console.error('Set MONGODB_URI or MongoUri in .env (or env) with a MongoDB connection string.');
+  process.exit(1);
+}
 
 async function testQuery() {
   const client = new MongoClient(uri);
