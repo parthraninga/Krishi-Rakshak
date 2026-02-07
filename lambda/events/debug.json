@@ -1,0 +1,14 @@
+{
+  "version": "2.0",
+  "routeKey": "GET /api/products/debug",
+  "rawPath": "/api/products/debug",
+  "rawQueryString": "",
+  "headers": {},
+  "requestContext": {
+    "http": {
+      "method": "GET",
+      "path": "/api/products/debug"
+    }
+  },
+  "queryStringParameters": null
+}

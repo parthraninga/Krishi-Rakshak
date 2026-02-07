@@ -1,0 +1,16 @@
+{
+  "version": "2.0",
+  "routeKey": "GET /api/products/123",
+  "rawPath": "/api/products/123",
+  "rawQueryString": "enrich=crops",
+  "headers": {},
+  "requestContext": {
+    "http": {
+      "method": "GET",
+      "path": "/api/products/123"
+    }
+  },
+  "queryStringParameters": {
+    "enrich": "crops"
+  }
+}

@@ -50,11 +50,11 @@
     <circle
         android:centerX="49"
         android:centerY="56"
-        android:radius="1.5"
+        android:radius="1.5dp"
         android:fillColor="#DCEDC8"/>
     <circle
         android:centerX="59"
         android:centerY="56"
-        android:radius="1.5"
+        android:radius="1.5dp"
         android:fillColor="#DCEDC8"/>
 </vector>

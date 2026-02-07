@@ -1,0 +1,56 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: KrishiRakshak products API - Lambda + API Gateway
+
+Parameters:
+  MongoUri:
+    Type: String
+    NoEcho: true
+    Description: MongoDB connection string (e.g. mongodb+srv://user:pass@cluster.mongodb.net/krishi-sakhi?retryWrites=true&w=majority)
+
+Globals:
+  Function:
+    Timeout: 30
+    MemorySize: 256
+    Runtime: nodejs20.x
+
+Resources:
+  ProductsApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: app.handler
+      CodeUri: .
+      Environment:
+        Variables:
+          MONGODB_URI: !Ref MongoUri
+      Events:
+        ApiRoot:
+          Type: HttpApi
+          Properties:
+            Path: /api/products
+            Method: GET
+        ApiProxy:
+          Type: HttpApi
+          Properties:
+            Path: /api/products/{proxy+}
+            Method: GET
+        ApiOptions:
+          Type: HttpApi
+          Properties:
+            Path: /api/products
+            Method: OPTIONS
+        ApiOptionsProxy:
+          Type: HttpApi
+          Properties:
+            Path: /api/products/{proxy+}
+            Method: OPTIONS
+
+Outputs:
+  ProductsApiUrl:
+    Description: Base URL for the products API - set this as API_BASE in the app (e.g. https://xxxx.execute-api.us-east-1.amazonaws.com)
+    Value: !Sub 'https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com'
+    Export:
+      Name: KrishiRakshakProductsApiUrl
+  ProductsApiFunctionArn:
+    Description: Products API Lambda ARN
+    Value: !GetAtt ProductsApiFunction.Arn

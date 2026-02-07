@@ -7,6 +7,7 @@
 
 import React, {useState, useEffect} from 'react';
 import {View, StyleSheet} from 'react-native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import SplashScreen from './src/screens/SplashScreen';
@@ -60,15 +61,17 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <View style={styles.container}>
-      {appState === 'splash' && (
-        <SplashScreen onComplete={handleSplashComplete} />
-      )}
-      {appState === 'languageSelection' && (
-        <LanguageSelectionScreen onLanguageSelected={handleLanguageSelected} />
-      )}
-      {appState === 'home' && <HomeScreen language={selectedLanguage} />}
-    </View>
+    <SafeAreaProvider>
+      <View style={styles.container}>
+        {appState === 'splash' && (
+          <SplashScreen onComplete={handleSplashComplete} />
+        )}
+        {appState === 'languageSelection' && (
+          <LanguageSelectionScreen onLanguageSelected={handleLanguageSelected} />
+        )}
+        {appState === 'home' && <HomeScreen language={selectedLanguage} />}
+      </View>
+    </SafeAreaProvider>
   );
 }
 

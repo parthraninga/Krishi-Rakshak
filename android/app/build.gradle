@@ -113,6 +113,13 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy {
+        force 'androidx.core:core:1.13.1'
+        force 'androidx.versionedparcelable:versionedparcelable:1.1.1'
+    }
+}
+
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")

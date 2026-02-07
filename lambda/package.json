@@ -1,0 +1,9 @@
+{
+  "name": "krishirakshak-products-api",
+  "version": "1.0.0",
+  "description": "Lambda products API for KrishiRakshak",
+  "main": "app.js",
+  "dependencies": {
+    "mongodb": "^6.12.0"
+  }
+}

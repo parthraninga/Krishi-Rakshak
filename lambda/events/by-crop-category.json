@@ -1,0 +1,17 @@
+{
+  "version": "2.0",
+  "routeKey": "GET /api/products/by-crop-category",
+  "rawPath": "/api/products/by-crop-category",
+  "rawQueryString": "cropName=Wheat&uiCategory=seeds",
+  "headers": {},
+  "requestContext": {
+    "http": {
+      "method": "GET",
+      "path": "/api/products/by-crop-category"
+    }
+  },
+  "queryStringParameters": {
+    "cropName": "Wheat",
+    "uiCategory": "seeds"
+  }
+}
