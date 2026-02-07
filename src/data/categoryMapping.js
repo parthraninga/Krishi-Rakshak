@@ -23,16 +23,16 @@ export const UI_CATEGORY_INSECTICIDE = 'insecticide';
 /**
  * Map from UI category (seeds | fertilizers | insecticide) to list of broad category names.
  * Use this to query fertilizers_data: { category_name: { $in: getBroadCategoriesForUi('seeds') } }
+ * Seeds: only Fruit Vegetable Crop. Fertilizers: Water Sol, Bio-Fertilizers, Micronutrients. Insecticides: Insecticide, Herbicide, Fungicide, Bio-stimulants.
  */
 export const UI_TO_BROAD_CATEGORIES = {
   [UI_CATEGORY_SEEDS]: ['Fruit Vegetable Crop'],
   [UI_CATEGORY_FERTILIZERS]: [
     'Water Sol Fertilizer',
-    'Bio-stimulants',
     'Bio-Fertilizers',
     'Micronutrients',
   ],
-  [UI_CATEGORY_INSECTICIDE]: ['Insecticide', 'Herbicide', 'Fungicide'],
+  [UI_CATEGORY_INSECTICIDE]: ['Insecticide', 'Herbicide', 'Fungicide', 'Bio-stimulants'],
 };
 
 export function getBroadCategoriesForUi(uiCategory) {

@@ -1,0 +1,52 @@
+<div class="wave"></div> ---> top-wave1.png
+
+
+wave animation {
+    margin-left: -997.041px;
+}
+element.style {
+}
+@media screen and (max-width: 990px) {
+    .wave {
+        top: -20px;
+    }
+}
+@media screen and (max-width: 990px) {
+    .wave, .wave:first-of-type {
+        background-size: auto 45px;
+    }
+}
+.wave {
+    background: url(/assets/images/storyof-iffco/top-wave2.png) repeat-x;
+    position: absolute;
+    top: -40px;
+    width: 30400px;
+    height: 198px;
+    -webkit-animation: wave 50s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.5s infinite;
+    animation: wave 50s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.5s infinite;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+article, aside, body, details, div, figcaption, figure, footer, form, h1, h2, h3, h4, h6, header, li, menu, nav, section, ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    letter-spacing: .01em;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    list-style: none;
+    line-height: 1.4;
+}
+
+
+<div class="wave"></div> top-wave2.png
+
+
+
+
+NOTE: 
+between top-wave1.png and top-wave2.png
+i want the topcouple-left.svg, topcouple-center.svg, topcouple-right.svg

@@ -43,6 +43,8 @@ import ScanScreen from './ScanScreen';
 import AnalysisScreen from './AnalysisScreen';
 import AddCropsScreen from './AddCropsScreen';
 import MyCropsScreen from './MyCropsScreen';
+import AskAgriExpertScreen from './AskAgriExpertScreen';
+import KnowledgeDetailScreen from './KnowledgeDetailScreen';
 import {CropIcon} from '../components/CropIcons';
 import {GEOCODE_API_BASE} from '../config';
 import {saveScanToHistory} from '../utils/scanHistory';
@@ -134,6 +136,8 @@ const HomeScreen = ({language}) => {
   const [locationLoading, setLocationLoading] = useState(false);
   const [activeTab, setActiveTab] = useState('home');
   const [homeSelectedCrops, setHomeSelectedCrops] = useState([]);
+  const [showKnowledgeScreen, setShowKnowledgeScreen] = useState(false);
+  const [knowledgeTopic, setKnowledgeTopic] = useState('seeds');
 
   const loadSelectedCrops = useCallback(async () => {
     try {
@@ -225,6 +229,18 @@ const HomeScreen = ({language}) => {
     );
   }
 
+  if (showKnowledgeScreen) {
+    return (
+      <KnowledgeDetailScreen
+        topic={knowledgeTopic}
+        onBack={() => {
+          setShowKnowledgeScreen(false);
+          setKnowledgeTopic('seeds');
+        }}
+      />
+    );
+  }
+
   if (activeTab === 'analysis') {
     return (
       <SafeAreaView style={styles.container}>
@@ -232,15 +248,37 @@ const HomeScreen = ({language}) => {
         <View style={styles.bottomNav}>
           <TouchableOpacity style={styles.navItem} onPress={() => setActiveTab('home')}>
             <TreeIcon size={28} color="#666" />
-            <Text style={styles.navLabel}>Dehaat</Text>
+            <Text style={styles.navLabel}>Agro Data</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.navItem, styles.navItemActive]}>
             <AnalysisIcon size={28} color="#2D7D3E" />
             <Text style={[styles.navLabel, styles.navLabelActive]}>Analysis</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.navItem} onPress={() => setActiveTab('home')}>
+          <TouchableOpacity style={styles.navItem} onPress={() => setActiveTab('cropAdvice')}>
             <CartIcon size={28} color="#666" />
-            <Text style={styles.navLabel}>Shop</Text>
+            <Text style={styles.navLabel}>Crop Advice</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
+  if (activeTab === 'cropAdvice') {
+    return (
+      <SafeAreaView style={styles.container}>
+        <AskAgriExpertScreen />
+        <View style={styles.bottomNav}>
+          <TouchableOpacity style={styles.navItem} onPress={() => setActiveTab('home')}>
+            <TreeIcon size={28} color="#666" />
+            <Text style={styles.navLabel}>Agro Data</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.navItem} onPress={() => setActiveTab('analysis')}>
+            <AnalysisIcon size={28} color="#666" />
+            <Text style={styles.navLabel}>Analysis</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.navItem, styles.navItemActive]}>
+            <CartIcon size={28} color="#2D7D3E" />
+            <Text style={[styles.navLabel, styles.navLabelActive]}>Crop Advice</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -381,19 +419,39 @@ const HomeScreen = ({language}) => {
         <View style={styles.quickAccessSection}>
           <Text style={styles.sectionTitle}>Quick Access</Text>
           <View style={styles.quickAccessGrid}>
-            <TouchableOpacity style={styles.quickAccessCard}>
+            <TouchableOpacity
+              style={styles.quickAccessCard}
+              onPress={() => {
+                setKnowledgeTopic('seeds');
+                setShowKnowledgeScreen(true);
+              }}>
               <SeedsIcon size={40} color="#8D6E63" />
               <Text style={styles.quickAccessText}>Seeds</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.quickAccessCard}>
+            <TouchableOpacity
+              style={styles.quickAccessCard}
+              onPress={() => {
+                setKnowledgeTopic('fertilizers');
+                setShowKnowledgeScreen(true);
+              }}>
               <FertilizerIcon size={40} color="#1565C0" />
               <Text style={styles.quickAccessText}>Fertilizers</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.quickAccessCard}>
+            <TouchableOpacity
+              style={styles.quickAccessCard}
+              onPress={() => {
+                setKnowledgeTopic('cropProtection');
+                setShowKnowledgeScreen(true);
+              }}>
               <PesticideIcon size={40} color="#558B2F" />
               <Text style={styles.quickAccessText}>Crop Protection</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.quickAccessCard}>
+            <TouchableOpacity
+              style={styles.quickAccessCard}
+              onPress={() => {
+                setKnowledgeTopic('cropNutrition');
+                setShowKnowledgeScreen(true);
+              }}>
               <WheatIcon size={40} color="#F9A825" />
               <Text style={styles.quickAccessText}>Crop Nutrition</Text>
             </TouchableOpacity>
@@ -405,15 +463,15 @@ const HomeScreen = ({language}) => {
       <View style={styles.bottomNav}>
         <TouchableOpacity style={[styles.navItem, styles.navItemActive]}>
           <TreeIcon size={28} color="#2D7D3E" />
-          <Text style={[styles.navLabel, styles.navLabelActive]}>Dehaat</Text>
+          <Text style={[styles.navLabel, styles.navLabelActive]}>Agro Data</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.navItem} onPress={() => setActiveTab('analysis')}>
           <AnalysisIcon size={28} color="#666" />
           <Text style={styles.navLabel}>Analysis</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity style={styles.navItem} onPress={() => setActiveTab('cropAdvice')}>
           <CartIcon size={28} color="#666" />
-          <Text style={styles.navLabel}>Shop</Text>
+          <Text style={styles.navLabel}>Crop Advice</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

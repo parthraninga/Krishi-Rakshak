@@ -1,16 +1,15 @@
 /**
- * Same 8→3 mapping as app: seeds, fertilizers, insecticide.
+ * Same mapping as app: seeds (Fruit Vegetable Crop only), fertilizers, insecticide.
  * Used by products API to filter fertilizers_data by category_name.
  */
 const UI_TO_BROAD_CATEGORIES = {
   seeds: ['Fruit Vegetable Crop'],
   fertilizers: [
     'Water Sol Fertilizer',
-    'Bio-stimulants',
     'Bio-Fertilizers',
     'Micronutrients',
   ],
-  insecticide: ['Insecticide', 'Herbicide', 'Fungicide'],
+  insecticide: ['Insecticide', 'Herbicide', 'Fungicide', 'Bio-stimulants'],
 };
 
 function getBroadCategoriesForUi(uiCategory) {

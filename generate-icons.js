@@ -2,64 +2,8 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-// SVG content for the app icon (simplified, no text)
-const iconSvg = `
-<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="1024" height="1024" fill="#FFFFFF"/>
-  <circle cx="512" cy="512" r="460" fill="#2D7D3E" opacity="0.1"/>
-  
-  <!-- Shield Base -->
-  <path d="M512 230 L692 305 L692 505 C692 650 615 765 512 865 C409 765 332 650 332 505 L332 305 L512 230 Z" 
-        fill="#2D7D3E" stroke="#1A5526" stroke-width="12"/>
-  
-  <!-- Inner Shield Highlight -->
-  <path d="M512 280 L652 340 L652 490 C652 605 595 695 512 770 C429 695 372 605 372 490 L372 340 L512 280 Z" 
-        fill="#3AA34A" opacity="0.3"/>
-  
-  <!-- Center Leaf -->
-  <ellipse cx="512" cy="485" rx="70" ry="150" fill="#8BC34A"/>
-  <path d="M 512 335 Q 530 410, 512 635 M 512 335 Q 494 410, 512 635" 
-        stroke="#6BA839" stroke-width="8" fill="none"/>
-  
-  <!-- Left Leaf -->
-  <g transform="translate(420, 505) rotate(-35, 0, 0)">
-    <ellipse cx="0" cy="50" rx="55" ry="115" fill="#9CCC65"/>
-    <path d="M 0 -65 Q 15 0, 0 165" stroke="#7BA856" stroke-width="6" fill="none"/>
-  </g>
-  
-  <!-- Right Leaf -->
-  <g transform="translate(604, 505) rotate(35, 0, 0)">
-    <ellipse cx="0" cy="50" rx="55" ry="115" fill="#9CCC65"/>
-    <path d="M 0 -65 Q -15 0, 0 165" stroke="#7BA856" stroke-width="6" fill="none"/>
-  </g>
-  
-  <!-- Bottom Left Leaf -->
-  <g transform="translate(450, 585) rotate(-25, 0, 0)">
-    <ellipse cx="0" cy="40" rx="45" ry="95" fill="#AED581"/>
-    <path d="M 0 -55 Q 10 0, 0 135" stroke="#8DB86A" stroke-width="5" fill="none"/>
-  </g>
-  
-  <!-- Bottom Right Leaf -->
-  <g transform="translate(574, 585) rotate(25, 0, 0)">
-    <ellipse cx="0" cy="40" rx="45" ry="95" fill="#AED581"/>
-    <path d="M 0 -55 Q -10 0, 0 135" stroke="#8DB86A" stroke-width="5" fill="none"/>
-  </g>
-  
-  <!-- Stem -->
-  <path d="M 512 360 L 512 680" stroke="#6BA839" stroke-width="16" stroke-linecap="round"/>
-  
-  <!-- Root -->
-  <ellipse cx="512" cy="680" rx="45" ry="22" fill="#5E8C4F" opacity="0.6"/>
-  
-  <!-- Decorative Dots -->
-  <circle cx="445" cy="640" r="14" fill="#DCEDC8"/>
-  <circle cx="579" cy="640" r="14" fill="#DCEDC8"/>
-  <circle cx="470" cy="695" r="12" fill="#DCEDC8"/>
-  <circle cx="554" cy="695" r="12" fill="#DCEDC8"/>
-  <circle cx="512" cy="730" r="10" fill="#DCEDC8" opacity="0.7"/>
-</svg>
-`;
+// Use logo.svg from assets as the app icon source
+const logoPath = path.join(__dirname, 'assets', 'logo.svg');
 
 // Android icon sizes
 const androidSizes = [
@@ -68,6 +12,17 @@ const androidSizes = [
   { size: 96, folder: 'mipmap-xhdpi' },
   { size: 144, folder: 'mipmap-xxhdpi' },
   { size: 192, folder: 'mipmap-xxxhdpi' },
+];
+
+// Design folder icon sizes (assets/design/icon_*.png)
+const designSizes = [
+  { size: 48, name: 'icon_48.png' },
+  { size: 72, name: 'icon_72.png' },
+  { size: 96, name: 'icon_96.png' },
+  { size: 144, name: 'icon_144.png' },
+  { size: 192, name: 'icon_192.png' },
+  { size: 432, name: 'icon_432.png' },
+  { size: 1024, name: 'icon_1024.png' },
 ];
 
 // iOS icon sizes (for AppIcon.appiconset)
@@ -90,7 +45,13 @@ const iosSizes = [
 ];
 
 async function generateIcons() {
-  console.log('🎨 Generating app icons...\n');
+  console.log('🎨 Generating app icons from assets/logo.svg...\n');
+
+  if (!fs.existsSync(logoPath)) {
+    throw new Error(`Logo not found at ${logoPath}`);
+  }
+
+  const logoSvg = fs.readFileSync(logoPath);
 
   // Create directories if they don't exist
   const androidBasePath = path.join(__dirname, 'android', 'app', 'src', 'main', 'res');
@@ -105,17 +66,42 @@ async function generateIcons() {
     }
 
     // Generate both square and round icons
-    await sharp(Buffer.from(iconSvg))
+    await sharp(logoSvg)
       .resize(size, size)
       .png()
       .toFile(path.join(folderPath, 'ic_launcher.png'));
 
-    await sharp(Buffer.from(iconSvg))
+    await sharp(logoSvg)
       .resize(size, size)
       .png()
       .toFile(path.join(folderPath, 'ic_launcher_round.png'));
 
     console.log(`  ✓ ${folder} (${size}x${size})`);
+  }
+
+  // Android adaptive icon foreground (drawable-xxxhdpi, 108dp @ 4x = 432px)
+  const drawableXxxhdpiPath = path.join(androidBasePath, 'drawable-xxxhdpi');
+  if (!fs.existsSync(drawableXxxhdpiPath)) {
+    fs.mkdirSync(drawableXxxhdpiPath, { recursive: true });
+  }
+  await sharp(logoSvg)
+    .resize(432, 432)
+    .png()
+    .toFile(path.join(drawableXxxhdpiPath, 'ic_launcher_foreground.png'));
+  console.log('  ✓ drawable-xxxhdpi/ic_launcher_foreground.png (432x432)');
+
+  // Generate design folder icons (assets/design/icon_*.png)
+  const designBasePath = path.join(__dirname, 'assets', 'design');
+  if (!fs.existsSync(designBasePath)) {
+    fs.mkdirSync(designBasePath, { recursive: true });
+  }
+  console.log('\n📐 Generating assets/design icons...');
+  for (const { size, name } of designSizes) {
+    await sharp(logoSvg)
+      .resize(size, size)
+      .png()
+      .toFile(path.join(designBasePath, name));
+    console.log(`  ✓ ${name} (${size}x${size})`);
   }
 
   // Generate iOS icons
@@ -125,7 +111,7 @@ async function generateIcons() {
   }
 
   for (const { size, name } of iosSizes) {
-    await sharp(Buffer.from(iconSvg))
+    await sharp(logoSvg)
       .resize(size, size)
       .png()
       .toFile(path.join(iosBasePath, name));
