@@ -1,0 +1,67 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="#2D7D3E" opacity="0.1"/>
+  
+  <!-- Shield Base -->
+  <path d="M100 30 L140 45 L140 90 C140 115 125 135 100 150 C75 135 60 115 60 90 L60 45 L100 30 Z" 
+        fill="#2D7D3E" stroke="#1A5526" stroke-width="2"/>
+  
+  <!-- Inner Shield Highlight -->
+  <path d="M100 40 L130 50 L130 85 C130 105 118 120 100 132 C82 120 70 105 70 85 L70 50 L100 40 Z" 
+        fill="#3AA34A" opacity="0.3"/>
+  
+  <!-- Leaf Elements -->
+  <!-- Center Leaf -->
+  <g transform="translate(100, 75)">
+    <ellipse cx="0" cy="10" rx="12" ry="25" fill="#8BC34A"/>
+    <path d="M 0 -15 Q 3 0, 0 35 M 0 -15 Q -3 0, 0 35" 
+          stroke="#6BA839" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Left Leaf -->
+  <g transform="translate(82, 85) rotate(-35)">
+    <ellipse cx="0" cy="8" rx="9" ry="18" fill="#9CCC65"/>
+    <path d="M 0 -10 Q 2 0, 0 26" 
+          stroke="#7BA856" stroke-width="1.2" fill="none"/>
+  </g>
+  
+  <!-- Right Leaf -->
+  <g transform="translate(118, 85) rotate(35)">
+    <ellipse cx="0" cy="8" rx="9" ry="18" fill="#9CCC65"/>
+    <path d="M 0 -10 Q -2 0, 0 26" 
+          stroke="#7BA856" stroke-width="1.2" fill="none"/>
+  </g>
+  
+  <!-- Bottom Leaves -->
+  <g transform="translate(88, 100) rotate(-25)">
+    <ellipse cx="0" cy="6" rx="7" ry="14" fill="#AED581"/>
+    <path d="M 0 -8 Q 1.5 0, 0 20" 
+          stroke="#8DB86A" stroke-width="1" fill="none"/>
+  </g>
+  
+  <g transform="translate(112, 100) rotate(25)">
+    <ellipse cx="0" cy="6" rx="7" ry="14" fill="#AED581"/>
+    <path d="M 0 -8 Q -1.5 0, 0 20" 
+          stroke="#8DB86A" stroke-width="1" fill="none"/>
+  </g>
+  
+  <!-- Stem -->
+  <path d="M 100 65 L 100 120" stroke="#6BA839" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Root/Ground Element -->
+  <ellipse cx="100" cy="120" rx="8" ry="4" fill="#5E8C4F" opacity="0.6"/>
+  
+  <!-- Decorative Dots (seeds/grains) -->
+  <circle cx="85" cy="115" r="2" fill="#DCEDC8"/>
+  <circle cx="115" cy="115" r="2" fill="#DCEDC8"/>
+  <circle cx="90" cy="123" r="1.5" fill="#DCEDC8"/>
+  <circle cx="110" cy="123" r="1.5" fill="#DCEDC8"/>
+  
+  <!-- App Name Text -->
+  <text x="100" y="175" font-family="Arial, sans-serif" font-size="16" font-weight="bold" 
+        text-anchor="middle" fill="#2D7D3E">KrishiRakshak</text>
+  
+  <!-- Tagline -->
+  <text x="100" y="190" font-family="Arial, sans-serif" font-size="9" 
+        text-anchor="middle" fill="#5E8C4F" opacity="0.8">Agricultural Guardian</text>
+</svg>

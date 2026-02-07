@@ -1,0 +1,60 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="#2D7D3E" opacity="0.1"/>
+  
+  <!-- Shield Base -->
+  <path d="M100 35 L150 55 L150 110 C150 140 130 165 100 185 C70 165 50 140 50 110 L50 55 L100 35 Z" 
+        fill="#2D7D3E" stroke="#1A5526" stroke-width="3"/>
+  
+  <!-- Inner Shield Highlight -->
+  <path d="M100 50 L140 65 L140 105 C140 128 125 145 100 162 C75 145 60 128 60 105 L60 65 L100 50 Z" 
+        fill="#3AA34A" opacity="0.3"/>
+  
+  <!-- Leaf Elements -->
+  <!-- Center Leaf -->
+  <g transform="translate(100, 90)">
+    <ellipse cx="0" cy="15" rx="16" ry="35" fill="#8BC34A"/>
+    <path d="M 0 -20 Q 4 0, 0 50 M 0 -20 Q -4 0, 0 50" 
+          stroke="#6BA839" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Left Leaf -->
+  <g transform="translate(75, 105) rotate(-35)">
+    <ellipse cx="0" cy="10" rx="12" ry="25" fill="#9CCC65"/>
+    <path d="M 0 -15 Q 3 0, 0 35" 
+          stroke="#7BA856" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Right Leaf -->
+  <g transform="translate(125, 105) rotate(35)">
+    <ellipse cx="0" cy="10" rx="12" ry="25" fill="#9CCC65"/>
+    <path d="M 0 -15 Q -3 0, 0 35" 
+          stroke="#7BA856" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Bottom Leaves -->
+  <g transform="translate(82, 125) rotate(-25)">
+    <ellipse cx="0" cy="8" rx="10" ry="20" fill="#AED581"/>
+    <path d="M 0 -12 Q 2 0, 0 28" 
+          stroke="#8DB86A" stroke-width="1.2" fill="none"/>
+  </g>
+  
+  <g transform="translate(118, 125) rotate(25)">
+    <ellipse cx="0" cy="8" rx="10" ry="20" fill="#AED581"/>
+    <path d="M 0 -12 Q -2 0, 0 28" 
+          stroke="#8DB86A" stroke-width="1.2" fill="none"/>
+  </g>
+  
+  <!-- Stem -->
+  <path d="M 100 70 L 100 145" stroke="#6BA839" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Root/Ground Element -->
+  <ellipse cx="100" cy="145" rx="10" ry="5" fill="#5E8C4F" opacity="0.6"/>
+  
+  <!-- Decorative Dots (seeds/grains) -->
+  <circle cx="80" cy="135" r="3" fill="#DCEDC8"/>
+  <circle cx="120" cy="135" r="3" fill="#DCEDC8"/>
+  <circle cx="88" cy="148" r="2.5" fill="#DCEDC8"/>
+  <circle cx="112" cy="148" r="2.5" fill="#DCEDC8"/>
+  <circle cx="100" cy="155" r="2" fill="#DCEDC8" opacity="0.7"/>
+</svg>

@@ -4,3 +4,10 @@ extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autoli
 rootProject.name = 'KrishiRakshak'
 include ':app'
 includeBuild('../node_modules/@react-native/gradle-plugin')
+
+// Disable toolchain foojay plugin
+gradle.beforeProject { project ->
+    project.plugins.withId('java') {
+        project.java.toolchain.vendor = null
+    }
+}
