@@ -32,7 +32,7 @@ KrishiRakshak is an agricultural support app for farmers. It helps with crop sel
 
 ### Splash and onboarding
 
-- **Splash screen:** Full-screen green branding with app name and “Seeds to Market” tagline; auto-advances after a short delay.
+- **Splash screen:** Full-screen green branding with app name and “Seeds to Market” tagline; auto-advance after a short delay.
 - **Language selection (first time only):** Six languages in a 2-column grid: Hindi, English, Bangla, Marathi, Odia, Gujarati. Selection is persisted with AsyncStorage (`hasSeenLanguageSelection`, `selectedLanguage`). Shown only on first launch.
 
 ### Home (Agro Data)
